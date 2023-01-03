@@ -1,1 +1,131 @@
 /** INSERT CUSTOM SCSS STYLES HERE **/
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    max-width: 1440px;
+    margin-left: 164px;
+    margin-right: 118px;
+    background-color: rgb(178, 237, 232);
+}
+
+  
+//---------------------HEADER---------------------//
+.header{
+    background-color: rgb(224, 231, 163);
+
+    &__logo{
+    font-weight: 500;
+    font-size: 24;
+}
+
+    &__nav{
+    font-weight: 400;
+    font-size: 14px;
+}
+    &__nav-link:focus,
+    &__nav-link:hover{
+    font-weight: 600;
+}
+
+    &__contact-btn{  
+    color: rgb( 15, 110, 255 );
+}
+
+&__lang{
+    border: none;
+    background-color: inherit;
+}
+}
+
+//---------------------HERO---------------------//
+.hero{
+    background-color:antiquewhite;
+
+    &__title{
+    font-weight: 600;
+    font-size: 48px;
+}
+
+    &__text{
+    font-size: 18px;
+}
+  
+    &__btn-video{
+    border-radius: 50px;
+    border-width: 2px;
+    border-color: rgb( 15, 110, 255 );
+    border-style: solid;
+    border-radius: 50%;
+    width: 139px;
+    height: 139px;
+}
+}
+
+
+//---------------------OUR-BLOG---------------------//
+.blog{
+    max-width:970px;
+    background-color: rgb(157, 158, 158);
+
+    &__main{
+    background-color: rgb(26, 25, 25);
+}
+    &__label{
+    font-size: 14px;
+}
+
+    &__date-main{
+    color: rgba( 255, 255, 255, 0.698 );
+}
+
+   &__date{
+    color: rgba( 29, 29, 29, 0.698 );
+}
+
+    &__title{
+    font-weight: 600;
+    font-size: 36px;
+}
+
+    &__name{
+    font-weight: 600;
+    font-size: 14px;
+}
+    &__name-main{
+    color: rgb( 255, 255, 255 );
+    font-weight: 600;
+    font-size: 14px;
+} 
+
+    &__caption-main{
+    font-weight: 500;
+    line-height: 1.6;
+    font-size: 18px;
+    color: rgb( 255, 255, 255 );
+}
+
+&__link-more{
+    font-size: 12px;
+    color: rgb( 255, 255, 255 );
+}
+
+&__link-read{
+    font-size: 12px;
+    color: rgb( 15, 110, 255 );
+    line-height: 1.5;
+}
+
+&__text{
+    font-size: 12px;
+    color: rgba( 29, 29, 29, 0.698 );
+    line-height: 1.5;
+}
+
+&__caption{
+    font-weight: 500;
+    font-size: 14px;
+    color: rgb( 29, 29, 29 );
+    line-height: 1.5;
+}}
