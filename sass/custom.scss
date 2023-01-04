@@ -1,4 +1,5 @@
 /** INSERT CUSTOM SCSS STYLES HERE **/
+
 body{
     font-family: 'Poppins', sans-serif;
 }
@@ -12,12 +13,20 @@ body{
 
   
 //---------------------HEADER---------------------//
+.logo{
+    font-weight: 500;
+    font-size: 24px;
+
+}
 .header{
     background-color: rgb(224, 231, 163);
 
     &__logo{
-    font-weight: 500;
-    font-size: 24;
+    width: 163px;
+    height: 160px;
+    border-radius: 0% 0% 40% 0%;
+    background-color: rgb(245, 245, 247);
+    display: inline-block;
 }
 
     &__nav{
@@ -42,7 +51,10 @@ body{
 //---------------------HERO---------------------//
 .hero{
     background-color:antiquewhite;
-
+    &--bg{
+        background-image: url(../img/Ellipse-7.png);
+        background-repeat: no-repeat;
+    }
     &__title{
     font-weight: 600;
     font-size: 48px;
@@ -52,22 +64,20 @@ body{
     font-size: 18px;
 }
   
-    &__btn-video{
-    border-radius: 50px;
-    border-width: 2px;
-    border-color: rgb( 15, 110, 255 );
-    border-style: solid;
-    border-radius: 50%;
-    width: 139px;
-    height: 139px;
+    &__btn-video{      
+        border-width: 2px;
+        border-color: rgb( 15, 110, 255 );
+        border-style: solid;
+        border-radius: 50%;
+        width: 139px;
+        height: 139px;
+    }  
 }
-}
-
 
 //---------------------OUR-BLOG---------------------//
 .blog{
     max-width:970px;
-    background-color: rgb(157, 158, 158);
+    background-color: rgb(75, 168, 168);
 
     &__main{
     background-color: rgb(26, 25, 25);

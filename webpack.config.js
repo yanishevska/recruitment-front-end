@@ -75,12 +75,6 @@ module.exports = {
                 test: /\.(jp?g|png|gif|svg)$/i,
                 use: [
                     {
-                        loader: "file-loader",
-                        options: {
-                            name: "img/[name].[ext]",
-                        },
-                    },
-                    {
                         loader: "img-loader",
                         options: {
                             enabled: isProduction,
