@@ -6,6 +6,8 @@ $blog-description: rgba( 29, 29, 29, 0.698 );
 $call-us: rgba( 29, 29, 29, 0.502 );
 $blog-news1-date:rgba( 255, 255, 255, 0.698 );
 $main-blue:rgb( 15, 110, 255 );
+$images-bgc: rgb(159,159,159);
+$backdrop-bg:rgba(0, 0, 0, 0.23);
 
 
 body{
@@ -175,7 +177,7 @@ color: $main-blue;
         max-height: 696px;
         border-radius: 0% 0% 14% 0%;
     }
-      &__title{
+     &__title{
     font-weight: 600;
     font-size: 48px;
     padding-right: 200px;
@@ -261,32 +263,59 @@ color: $main-blue;
 
     &__top{
         margin-top: 14px;
+        width: 387px;
+        height: 269px;
+        background-color: $images-bgc;
+        border-radius:17% 0 17% 17%;
     }
     &__bottom{
    position: relative;
         margin-top: 25px;
+        width: 306px;
+        height: 390px;
+        background-color: $images-bgc;
+        border-radius:17% 17% 0 17%;
+        &::after{
+            content: "";
+            border-width: 2px;
+            border-color: rgb( 255, 255, 255 );
+            border-style: solid;
+            position: absolute;
+            bottom: -60px;
+            left: -107px;
+            width: 277px;
+            height: 0;
+            z-index: 68;
+          }
     }
-    &--absolute{
+    &__left{
+        width: 470px;
+        height: 298px;
+        background-color: $images-bgc;
+        border-radius:17% 17% 17% 0;
         position: absolute;
-        left: 61%;
-        bottom: 12%;
-        max-width: 470px;
-        height: 300px;
+        left: 36%;
+        bottom: 51%;
+        // max-width: 470px;
+        // height: 300px;
     }
     &__ellipse{
         position: absolute;
         bottom: 521px;
+        
     }
     &__blue-ellipse{
     position: absolute;
-    bottom: 520px;
-    right: 274px;}
+    bottom: 33.1%;
+    right: 19%;
+}
+ 
+  
 }
 
 //---------------------OUR-BLOG---------------------//
 
 .blog{
-    // max-width: 1158px;
     padding: 60px 0 114px 196px;
     background-image: url(../img/Ellipse-40.png);
     background-repeat: no-repeat;
@@ -319,26 +348,39 @@ color: $main-blue;
 .news{
 
 &__desc{
+    position: relative;
     display: flex;
     padding-bottom: 45px;
+
+    &::after{
+       content: "";
+       position: absolute;
+            border-width: 1px;
+            border-color: $main-text-color;
+            border-style: solid;
+            opacity: 0.102;
+            top: 71px;
+            width: 208px;
+            height: 0px;
+            z-index: 15;
+          
+          
+    }
+}
+
+&__title{
+    margin-left: 23px;
+
 }
 &__text{
     display: flex;
     flex-direction: column;
-    margin-left: 23px;
    
 }
-
-
-
-
    &__date{
     color: $blog-description;
     font-size: 12px;
 }
-
-    
-
     &__name{
     font-weight: 600;
     font-size: 14px;
@@ -346,14 +388,11 @@ color: $main-blue;
 }
     
 
-
-
 &__link-read{
     font-size: 12px;
     color: $main-blue;
     line-height: 1.5;
 }
-
 
 &__text{
     font-size: 12px;
@@ -369,9 +408,7 @@ color: $main-blue;
     line-height: 1.5;
     padding-bottom: 15px;
 }
-
 }
-  
 
 .news-list--grid{
     max-width: 1012px;
@@ -474,3 +511,105 @@ color: $main-blue;
 }
 
 }
+
+
+//-------------MODAL-------------//
+.backdrop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+
+  z-index: 1200;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  transition: opacity 500ms ease-out 200ms;
+
+  background-color: $backdrop-bg;
+  backdrop-filter: blur(9px);
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+ .modal-open {
+    overflow: hidden;
+    opacity: 1;
+    pointer-events: initial;
+  }
+  
+  .modal__backdrop.is-close {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .is-close .modal {
+    transform: translate(100%, 100%) scale(0.2);
+  }
+
+    .modal{ 
+        position: absolute;
+        z-index: 1500;
+        min-width: 272px;
+        padding: 20px;
+        top: 4%;
+      
+        text-align: center;
+      
+        border-radius: 40px 0px 40px 40px;
+        background-color: $background-grey;
+        transition: transform 600ms ease-out 500ms;
+      
+        @media screen and (min-width: 768px) {
+          top: 3%;
+          width: 680px;
+          border-radius: 68px 0px 68px 68px;
+        }
+
+        @media screen and (min-width: 1280px) {
+          width: 930px;
+          padding: 100px;
+          border-radius: 103px 0px 103px 103px ;
+          top: 6%;
+        }
+
+
+    &__btn-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 8px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: $hero-text;
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+        width: 10px;
+      height: 10px;
+    }
+    }
+    &__iframe{
+    width: 100%;
+    }
+    }
+    .iframe{
+        @media screen and (max-width: 768px) {
+        width: 100%;
+        height: 100%;
+            }
+    }

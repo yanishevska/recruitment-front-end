@@ -48,22 +48,23 @@
       <h1 class="hero__title">Lorem ipsum dolor sit amet</h1>
       <p class="hero__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aenean lobortis leo ut feils vestibulum cursus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;</p>
    
-      <div class="video-btn__box">
+      <div class="video-btn__box" data-modal-open>
       <button class="video-btn" type="button">
       <img class="video-btn__polygon" src="../img/Polygon-1.png" alt="polygon">
     </button>
       <p class="hero__text video-btn__text">Watch demo<br/> video</p>
     </div>
-    <img class="hero-images--absolute" src="../img/Rectangle-7.png" alt="images"> 
-</div>
-
-<div class="hero-images--bg">
+  </div>
+  
+  <div class="hero-images--bg">
     <div class="hero-images">
-        <img class="hero-images__top" src="../img/Rectangle-2.png" alt="images" width="390" height="274">
-        <img class="hero-images__bottom" src="../img/Rectangle-6.png" alt="images" width="310" height="388">
-        <img class="hero-images__ellipse" src="../img/Ellipse-8.png" alt="ellipse"> 
-        <img class="hero-images__blue-ellipse" src="../img/Ellipse-9.png" alt="blue ellipse">
-    </div>
+      <div class="hero-images__top"></div>
+      <div class="hero-images__bottom"></div>
+      <div class="hero-images__left"></div>
+      <img class="hero-images__ellipse" src="../img/Ellipse-8.png" alt="ellipse"> 
+      <img class="hero-images__blue-ellipse" src="../img/Ellipse-9.png" alt="blue ellipse">
+    
+      </div>
     </div>   
     </section>
 
@@ -84,7 +85,7 @@
             <li class="news__item grid-item news">
             <div class="news__desc">
             <img src="../img/Ellipse-54.png" alt="avatar">
-            <div class="news__text">
+            <div class="news__title">
             <p class="news__name">Paul Scholes</p>
             <p class="news__date"> 15 Jan, 2023</p>
             </div>
@@ -97,7 +98,7 @@
             <li class="news__item grid-item">
             <div class="news__desc">
             <img src="../img/Ellipse-54.png" alt="avatar">
-            <div class="news__text">
+            <div class="news__title">
             <p class="news__name">Hary Kane</p>
             <p class="news__date">15 Jan, 2023</p>
             </div>
@@ -108,6 +109,20 @@
             </li>
         </ul>
     </section>
+
+
+    <div class="modal__backdrop backdrop is-close" data-modal >
+       <div class="modal">
+        <button class="modal__btn-close" type="button" data-modal-close>
+          <svg width="11" height="11">
+            <use href="../img/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <div class="modal__iframe">
+        <iframe class="iframe" width="560" height="315" src="https://www.youtube-nocookie.com/embed/nN2eZos7HN0" title="YouTube video player" frameborder="0" allow="accelerometer; controls; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      </div>
+    </div>
  </main>
 </body>
 </html>
