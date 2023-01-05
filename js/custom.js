@@ -5,33 +5,33 @@ export default function() {
 const refs={
 openModalBtn: document.querySelector('[data-modal-open]'),
 closeModalBtn: document.querySelector('[data-modal-close]'),
-modalTeamBackdrop: document.querySelector('[data-modal]'),
+modalBackdrop: document.querySelector('[data-modal]'),
 }
 
-refs.openModalBtn.addEventListener('click', openModalTeam);
-refs.closeModalBtn.addEventListener('click', closeModalTeam);
-refs.modalTeamBackdrop.addEventListener('click', closeModalTeamOverlay);
+refs.openModalBtn.addEventListener('click', openModal);
+refs.closeModalBtn.addEventListener('click', closeModal);
+refs.modalBackdrop.addEventListener('click', closeModalOverlay);
 
-function openModalTeam() {
-  window.addEventListener('keydown', closeModalTeamESC);
+function openModal() {
+  window.addEventListener('keydown', closeModalESC);
   document.body.classList.toggle('modal-open');
-  refs.modalTeamBackdrop.classList.remove('is-close');
+  refs.modalBackdrop.classList.remove('is-close');
 }
 
-function closeModalTeamESC(event) {
+function closeModalESC(event) {
   if (event.code === 'Escape') {
-    closeModalTeam();
+    closeModal();
   }
 }
 
-function closeModalTeamOverlay(event) {
+function closeModalOverlay(event) {
   if (event.target === event.currentTarget) {
-    closeModalTeam();
+    closeModal();
   }
 }
 
-function closeModalTeam() {
-  window.removeEventListener('keydown', closeModalTeamESC);
+function closeModal() {
+  window.removeEventListener('keydown', closeModalESC);
   document.body.classList.toggle('modal-open');
-  refs.modalTeamBackdrop.classList.add('is-close');
+  refs.modalBackdrop.classList.add('is-close');
 }}
