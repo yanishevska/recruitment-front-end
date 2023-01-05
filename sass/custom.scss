@@ -1,141 +1,476 @@
-/** INSERT CUSTOM SCSS STYLES HERE **/
+$primary-white: rgb(255, 255, 255);
+$background-grey:rgb(245, 245, 247);
+$main-text-color: rgb( 29, 29, 29 );
+$hero-text: rgba( 29, 29, 29, 0.6 );
+$blog-description: rgba( 29, 29, 29, 0.698 );
+$call-us: rgba( 29, 29, 29, 0.502 );
+$blog-news1-date:rgba( 255, 255, 255, 0.698 );
+$main-blue:rgb( 15, 110, 255 );
+
 
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;  
+    background-color: $background-grey;
 }
 
 .container{
     max-width: 1440px;
-    margin-left: 164px;
-    margin-right: 118px;
-    background-color: rgb(178, 237, 232);
+    // padding-left: 164px;
+    // margin-right: 118px;
 }
 
-  
+// select{
+//     -webkit-appearance: none;
+//     background: transparent;
+//   background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+//   background-repeat: no-repeat;
+//   background-position-x: 100%;
+//   background-position-y: 5px;
+//   border: 1px solid #dfdfdf;
+//   border-radius: 2px;
+//   margin-right: 2rem;
+// //   padding: 1rem;
+// //   padding-right: 2rem;
+// }
+
+
 //---------------------HEADER---------------------//
+.header{
+    display: flex;
+    align-items: center;
+//    background-color: rgb(255, 255, 255);
+
+    }
+
+//***LOGO
+
 .logo{
     font-weight: 500;
     font-size: 24px;
-
-}
-.header{
-    background-color: rgb(224, 231, 163);
-
-    &__logo{
+    padding-left: 70px;
+  &__box{
+    background-color: $primary-white;
+  }
+    &__bg{
+    display: flex;
+    align-items: center;
     width: 163px;
     height: 160px;
     border-radius: 0% 0% 40% 0%;
-    background-color: rgb(245, 245, 247);
-    display: inline-block;
+    background-color: $background-grey;
+
+}
 }
 
-    &__nav{
+//***NAVIGATION
+
+.navigation{
+        display: flex;
+        align-items: center;
+        padding-left: 78px;
+        background-color: $primary-white;
+
+        &__box{
+            display: flex;
+            
+        }
+         &__list{
+      
+        display: flex;
+        flex-direction: row;
+    }
+    &__item{
+    position: relative;
+    }
+
+  
+    &__item:not(:last-child){
+        margin-right: 47px;
+    }
+
+    &__item:last-child{
+        margin-right: 253px;
+    }
+      &__link{
+    text-decoration: none;
     font-weight: 400;
     font-size: 14px;
-}
-    &__nav-link:focus,
-    &__nav-link:hover{
-    font-weight: 600;
+    color: $main-text-color;
+    }
+
+
+&__link--active{
+font-weight: 600;
+color: $main-blue;
 }
 
-    &__contact-btn{  
-    color: rgb( 15, 110, 255 );
+&__link--active::after {
+    content: "";
+    border-width: 0.5px;
+    border-color: $main-blue;
+    border-style: solid;
+    position: absolute;
+    left: 20px;
+    top: 25px;
+    width: 0;
+    height: 19px;
+    z-index: 83;
+  }
+    }
+
+//****CONTACTS  
+
+    .contacts{
+    display: flex;
+    align-items: center;
+    width: 502px;
+    height: 160px;
+    padding-left: 90px;
+    background-color: $background-grey;
+
+
+    & p{
+        font-size: 14px;  
+        margin-right: 20px;
+        color: $call-us;
+    }
+    & a{
+        text-decoration: none;
+        color: $main-blue;
+      }
+      
+    &__btn{ 
+    width: 134px;
+    height: 41px;
+    border-style: solid;
+    border-radius: 21px;
+    border-color: $main-blue; 
+    color: $main-blue;
+    border-width: 1px;
 }
 
-&__lang{
+    &__lang{
+    font-size: 14px;
     border: none;
     background-color: inherit;
+    margin-right: 44px;
 }
-}
+    }
+  
+
+
 
 //---------------------HERO---------------------//
 .hero{
-    background-color:antiquewhite;
-    &--bg{
-        background-image: url(../img/Ellipse-7.png);
-        background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+   
+    &__description{
+        position: relative;
+        display: flex;
+        background-color: $primary-white;
+        flex-direction: column;
+        padding: 50px 0 0 160px;
+        max-width: 820px;
+        max-height: 696px;
+        border-radius: 0% 0% 14% 0%;
     }
-    &__title{
+      &__title{
     font-weight: 600;
     font-size: 48px;
+    padding-right: 200px;
 }
 
     &__text{
     font-size: 18px;
+    padding-right: 90px;
+    color: $hero-text;
 }
-  
-    &__btn-video{      
+}
+
+//***VIDEO-BUTTON
+
+   .video-btn{    
+        position: relative;  
+        // margin-top: 82px;
         border-width: 2px;
-        border-color: rgb( 15, 110, 255 );
+        border-color: $main-blue;
         border-style: solid;
         border-radius: 50%;
         width: 139px;
         height: 139px;
+&::before{
+        content: "";
+        border-width: 0.5px;
+        border-color: $main-blue;
+        border-style: solid;
+        position: absolute;
+        left: -161px;
+        top: 64px;
+        width: 197px;
+        height: 2px;
+        z-index: 83;
+
+    }
+
+    &__box{
+    display: flex;
+    margin-top: 82px;
+    align-items: center;
     }  
+    
+    &__polygon{
+        padding-left: 10px;
+    }
+    &__text{
+        position: relative;
+        color: $main-blue;
+        margin-left: 16px;
+  
+    &::after{
+        content: "";
+        border-width: 0.25px;
+        border-color: $main-blue;
+        border-style: solid;
+        position: absolute;
+        left: -1px;
+        top: 25px;
+        width: 65px;
+        height: 0px;
+        z-index: 83;
+    }
+    }
+}
+
+//***IMAGES(RIGHT SIDE)
+
+    .hero-images{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 107px;
+        max-width: 500px;
+        background-color: $background-grey;
+
+     &--bg{
+        
+        background-image: url(../img/Ellipse-7.png);
+        background-repeat: no-repeat;
+        background-position: bottom 26% right 14%;
+    }
+
+    &__top{
+        margin-top: 14px;
+    }
+    &__bottom{
+   position: relative;
+        margin-top: 25px;
+    }
+    &--absolute{
+        position: absolute;
+        left: 61%;
+        bottom: 12%;
+        max-width: 470px;
+        height: 300px;
+    }
+    &__ellipse{
+        position: absolute;
+        bottom: 521px;
+    }
+    &__blue-ellipse{
+    position: absolute;
+    bottom: 520px;
+    right: 274px;}
 }
 
 //---------------------OUR-BLOG---------------------//
+
 .blog{
-    max-width:970px;
-    background-color: rgb(75, 168, 168);
+    // max-width: 1158px;
+    padding: 60px 0 114px 196px;
+    background-image: url(../img/Ellipse-40.png);
+    background-repeat: no-repeat;
+    background-position: bottom 59% right 2%;
 
-    &__main{
-    background-color: rgb(26, 25, 25);
-}
-    &__label{
+        &__label{
     font-size: 14px;
+    color:$main-blue;
 }
 
-    &__date-main{
-    color: rgba( 255, 255, 255, 0.698 );
-}
-
-   &__date{
-    color: rgba( 29, 29, 29, 0.698 );
-}
-
-    &__title{
+&__title{
     font-weight: 600;
     font-size: 36px;
+    margin-bottom: 86px;
+
+    &::after{      
+        content: "";
+        border-width: 1px;
+        border-color: $main-blue;
+        border-style: solid;
+        position: absolute;
+        left: 601px;
+        top: 970px;
+        width: 216px;
+        height: 0;
+        z-index: 40;
 }
+}
+}
+.news{
+
+&__desc{
+    display: flex;
+    padding-bottom: 45px;
+}
+&__text{
+    display: flex;
+    flex-direction: column;
+    margin-left: 23px;
+   
+}
+
+
+
+
+   &__date{
+    color: $blog-description;
+    font-size: 12px;
+}
+
+    
 
     &__name{
     font-weight: 600;
     font-size: 14px;
+    padding-bottom: 5px;
 }
-    &__name-main{
-    color: rgb( 255, 255, 255 );
-    font-weight: 600;
-    font-size: 14px;
-} 
+    
 
-    &__caption-main{
-    font-weight: 500;
-    line-height: 1.6;
-    font-size: 18px;
-    color: rgb( 255, 255, 255 );
-}
 
-&__link-more{
-    font-size: 12px;
-    color: rgb( 255, 255, 255 );
-}
 
 &__link-read{
     font-size: 12px;
-    color: rgb( 15, 110, 255 );
+    color: $main-blue;
     line-height: 1.5;
 }
 
+
 &__text{
     font-size: 12px;
-    color: rgba( 29, 29, 29, 0.698 );
+    color: $blog-description;
     line-height: 1.5;
+    margin-bottom: 12px;
 }
 
 &__caption{
     font-weight: 500;
     font-size: 14px;
-    color: rgb( 29, 29, 29 );
+    color: $main-text-color;
     line-height: 1.5;
-}}
+    padding-bottom: 15px;
+}
+
+}
+  
+
+.news-list--grid{
+    max-width: 1012px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -86px;
+    margin-left: -50px;
+}
+.grid-item{
+    flex-basis: calc((100% - 50px * var(--grid-item)) / var(--grid-item));
+    margin-top: 86px;
+    margin-left: 50px;
+
+}
+    .news__item{
+    --grid-item:3;
+    width:290px;
+    height: 364px;
+    padding: 43px 50px 65px 39px;
+    background-color: $primary-white;  
+    border-radius: 14% 14% 0 14%; 
+
+
+    &:first-child{
+    background-color: $main-text-color;
+    padding-right: 74px;
+}
+}
+
+.news-1{
+
+&__ellipse{
+    position: absolute;
+    bottom: 375px;
+    left: 127px;
+    z-index: -12;
+
+}
+
+&__name{
+    color: $primary-white;
+    font-weight: 600;
+    font-size: 14px;
+    padding-bottom: 12px;
+} 
+
+    &__date{
+    color: $blog-news1-date;
+    padding-bottom: 25px;
+    font-size: 14px;
+}
+
+    &__caption{
+    font-weight: 500;
+    line-height: 1.6;
+    font-size: 18px;
+    color: $primary-white;
+    padding-bottom: 70px;
+}
+
+&__link-more{
+    text-decoration: none;
+    font-size: 12px;
+    color: $primary-white;
+    padding-left: 10px;
+
+    &::after{      
+            content: "";
+            border-width: 1px;
+            border-color: $primary-white;
+            border-style: solid;
+            position: absolute;
+            left: 0px;
+            top: 1371px;
+            width: 218px;
+            height: 0px;
+            z-index: 41;
+       
+    }
+    &::before{
+        content: "";
+            border-width: 1px;
+            border-color: $primary-white;
+            border-style: solid;
+            border-radius: 50%;
+            position: absolute;
+            left: 231px;
+            top: 1343px;
+            width: 60px;
+            height: 60px;
+            z-index: 36;
+          
+          
+    }
+    & span{
+        text-decoration: underline;
+    }
+}
+
+}
